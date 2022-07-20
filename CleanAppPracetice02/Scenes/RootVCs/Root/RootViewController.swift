@@ -80,6 +80,9 @@ fileprivate struct RootPagingMenuOptions: PagingMenuControllerCustomizable {
 protocol RootDisplayLogic: AnyObject
 {
     func displaySomething(viewModel: Root.Something.ViewModel)
+    func focusTabMenu(page:SideMenuPage)
+    func reloadTabbar()
+    func initRootPaging()
 }
 
 class RootViewController: UIViewController, RootDisplayLogic, UITabBarDelegate
