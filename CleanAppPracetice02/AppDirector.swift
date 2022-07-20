@@ -33,4 +33,32 @@ class AppDirector: NSObject {
         }
     }
     
+    //MARK: Tab menu Controller
+    static func showHome() {
+        rootViewController.showView(page: .Home)
+        AppGlobal.sharedInstance().activeDrawingMenu = DrawerMenu.Home()
+    }
+    
+    static func showEnergy(){
+        rootViewController.showView(page: .News)
+        AppGlobal.sharedInstance().activeDrawingMenu = DrawerMenu.News()
+        
+    }
+    
+    static func showService(){
+        rootViewController.showView(page: .Activity)
+        AppGlobal.sharedInstance().activeDrawingMenu = DrawerMenu.Activity()
+        
+    }
+    
+    static func showNoti(){
+        rootViewController.showView(page: .Setting)
+        AppGlobal.sharedInstance().activeDrawingMenu = DrawerMenu.Setting()
+        
+    }
+    
+    //MARK: Push
+    
+    //MARK: Present
+    
 }

@@ -12,73 +12,52 @@
 
 import UIKit
 
-//MARK: === For Paging Controller ===
-enum SideMenuPage:Int {
-    case Home = 0
-    case News = 1
-    case Activity = 2
-    case Setting = 3
-    
-    
-    func index() -> Int {
-        return self.rawValue
-    }
-    
-    func string() -> String {
-        
-        switch self {
-        case .Home: return DrawerMenu.Home()
-        case .News: return DrawerMenu.News()
-        case .Activity: return DrawerMenu.Activity()
-        case .Setting: return DrawerMenu.Setting()
-        }
-    }
-}
-
 
 @objc protocol RootRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+//    func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
 protocol RootDataPassing
 {
-  var dataStore: RootDataStore? { get }
+    var dataStore: RootDataStore? { get }
 }
 
 class RootRouter: NSObject, RootRoutingLogic, RootDataPassing
 {
-  weak var viewController: RootViewController?
-  var dataStore: RootDataStore?
-  
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: RootViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: RootDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+    weak var viewController: RootViewController?
+    var dataStore: RootDataStore?
+    
+    
+    
+    // MARK: Routing
+    
+    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    //{
+    //  if let segue = segue {
+    //    let destinationVC = segue.destination as! SomewhereViewController
+    //    var destinationDS = destinationVC.router!.dataStore!
+    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+    //  } else {
+    //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
+    //    var destinationDS = destinationVC.router!.dataStore!
+    //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+    //    navigateToSomewhere(source: viewController!, destination: destinationVC)
+    //  }
+    //}
+    
+    // MARK: Navigation
+    
+    //func navigateToSomewhere(source: RootViewController, destination: SomewhereViewController)
+    //{
+    //  source.show(destination, sender: nil)
+    //}
+    
+    // MARK: Passing data
+    
+    //func passDataToSomewhere(source: RootDataStore, destination: inout SomewhereDataStore)
+    //{
+    //  destination.name = source.name
+    //}
 }

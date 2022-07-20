@@ -12,12 +12,77 @@
 
 import UIKit
 
-protocol RootDisplayLogic: class
+
+//MARK: === For Paging Controller ===
+enum SideMenuPage:Int {
+    case Home = 0
+    case News = 1
+    case Activity = 2
+    case Setting = 3
+    
+    
+    func index() -> Int {
+        return self.rawValue
+    }
+    
+    func string() -> String {
+        
+        switch self {
+        case .Home: return DrawerMenu.Home()
+        case .News: return DrawerMenu.News()
+        case .Activity: return DrawerMenu.Activity()
+        case .Setting: return DrawerMenu.Setting()
+        }
+    }
+}
+//MARK: ==== Paging Menu Protocal ====
+
+fileprivate var RootLandingPageControllers: [UIViewController] {
+    
+    let homeViewController = HomeViewController.instantiateFromStoryboard()//index menu 0
+    let newsViewController = NewsViewController.instantiateFromStoryboard()
+    let activityViewController = ActivityViewController.instantiateFromStoryboard()
+    let settingViewController = SettingViewController.instantiateFromStoryboard()
+    
+    
+    return [homeViewController,newsViewController,activityViewController,settingViewController]
+}
+
+fileprivate struct RootMenuItemHome: MenuItemViewCustomizable {}
+fileprivate struct RootMenuItemNews: MenuItemViewCustomizable {}
+fileprivate struct RootMenuItemActivity: MenuItemViewCustomizable {}
+fileprivate struct RootMenuItemSetting: MenuItemViewCustomizable {}
+
+
+fileprivate struct RootPagingMenuOptions: PagingMenuControllerCustomizable {
+    var componentType: ComponentType {
+        return .all(menuOptions: MenuOptions(), pagingControllers: RootLandingPageControllers)
+    }
+    var menuControllerSet: MenuControllerSet {
+        return .single
+    }
+    
+    struct MenuOptions: MenuViewCustomizable {
+        var displayMode: MenuDisplayMode {
+            return .segmentedControl
+        }
+        var height: CGFloat {
+            return 0
+        }
+        var itemsOptions: [MenuItemViewCustomizable] {
+            
+            return [RootMenuItemHome(), RootMenuItemNews(),RootMenuItemActivity() ,RootMenuItemSetting()]
+        }
+    }
+}
+
+//MARK: ==== ViewController ====
+protocol RootDisplayLogic: AnyObject
 {
     func displaySomething(viewModel: Root.Something.ViewModel)
 }
 
-class RootViewController: UIViewController, RootDisplayLogic
+class RootViewController: UIViewController, RootDisplayLogic, UITabBarDelegate
 {
     // MARK: Destination ViewController
     static fileprivate var rootViewController: RootViewController?
@@ -37,6 +102,23 @@ class RootViewController: UIViewController, RootDisplayLogic
             
         }
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    fileprivate var tabHomeMenu:UITabBarItem!
+    fileprivate var tabNewsMenu:UITabBarItem!
+    fileprivate var tabActivityMenu:UITabBarItem!
+    fileprivate var tabSettingMenu:UITabBarItem!
+    
+    var viewMap = Dictionary<String,AnyObject?>() //[String: AnyObject] = [:]
+    var activeView = ""
+    var currentPage:SideMenuPage = .Home
+    
+    fileprivate var options: PagingMenuControllerCustomizable!
+    fileprivate var pagingMenuController: PagingMenuController!
+    
     // MARK: interactor, router
     var interactor: RootBusinessLogic?
     var router: (NSObjectProtocol & RootRoutingLogic & RootDataPassing)?
@@ -88,12 +170,128 @@ class RootViewController: UIViewController, RootDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        initRootPaging()
         doSomething()
     }
     
-    // MARK: Do something
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        reloadTabbar()
+        
+    }
     
+    override func viewSafeAreaInsetsDidChange() {
+        reloadTabbar()
+    }
+    
+    // MARK: Do something
+    @IBOutlet fileprivate var mainTabbar:UITabBar!
     //@IBOutlet weak var nameTextField: UITextField!
+    
+    func initRootPaging(){
+        RootViewController.rootViewController = self
+        mainTabbar.delegate = self
+        
+        pagingMenuController = self.children.first as? PagingMenuController
+        
+        let options = RootPagingMenuOptions()
+        pagingMenuController.setup(options)
+    }
+    
+    func showView(page:SideMenuPage) {
+        currentPage = page
+        pagingMenuController.move(toPage: page.index())
+        activeView = page.string()
+        
+        focusTabMenu(page: page)
+    }
+    
+    func reloadTabbar(){
+        
+        tabHomeMenu = nil
+        tabNewsMenu = nil
+        tabActivityMenu = nil
+        tabSettingMenu = nil
+        
+        tabHomeMenu = UITabBarItem(title: "Home", image: UIImage(named: ""), selectedImage: UIImage(named: ""))
+        tabNewsMenu = UITabBarItem(title: "News", image: UIImage(named: ""), selectedImage: UIImage(named: ""))
+        tabActivityMenu = UITabBarItem(title: "Activity", image: UIImage(named: ""), selectedImage: UIImage(named: ""))
+        tabSettingMenu = UITabBarItem(title: "Setting", image: UIImage(named: ""), selectedImage: UIImage(named: ""))
+//        tabHomeMenu = UITabBarItem(title: "Home", image: UIImage(named: "ic_tabbar_home"), selectedImage: UIImage(named: "ic_tabbar_home_selected"))
+//        tabNewsMenu = UITabBarItem(title: "News", image: UIImage(named: "ic_tabbar_enegy"), selectedImage: UIImage(named: "ic_tabbar_energy_selected"))
+//        tabActivityMenu = UITabBarItem(title: "Activity", image: UIImage(named: "ic_tabbar_service"), selectedImage: UIImage(named: "ic_tabbar_service_selected"))
+//        tabSettingMenu = UITabBarItem(title: "Setting", image: UIImage(named: "ic_tabbar_noti"), selectedImage: UIImage(named: "ic_tabbar_noti_selected"))
+        
+//        let font = UIFont(name: "Prompt-SemiBold", size: 12.0)
+//        if font != nil {
+//            tabHomeMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor.darkGray], for: .normal)
+//
+//            tabEnergyMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor.darkGray], for: .normal)
+//
+//            tabServiceMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor.darkGray], for: .normal)
+//
+//            tabNotiMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor.darkGray], for: .normal)
+//
+//            tabMeMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor.darkGray], for: .normal)
+//
+//            if #available(iOS 13, *) {
+//                let appearance = UITabBarAppearance()
+//                appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor: UIColor(hexString: "#1E408F")]
+//                appearance.backgroundColor = .white
+//
+//                tabHomeMenu.standardAppearance = appearance
+//                tabEnergyMenu.standardAppearance = appearance
+//                tabServiceMenu.standardAppearance = appearance
+//                tabNotiMenu.standardAppearance = appearance
+//                tabMeMenu.standardAppearance = appearance
+//            }else{
+//
+//                UITabBar.appearance().backgroundColor = .white
+//
+//                tabHomeMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor(hexString: "#1E408F")], for: .selected)
+//                tabEnergyMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor(hexString: "#1E408F")], for: .selected)
+//                tabServiceMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor(hexString: "#1E408F")], for: .selected)
+//                tabNotiMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor(hexString: "#1E408F")], for: .selected)
+//                tabMeMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor(hexString: "#1E408F")], for: .selected)
+//            }
+//
+//
+//
+//
+//        }
+        
+//        tabHomeMenu.image = UIImage(named: "ic_tabbar_home")?.withRenderingMode(.alwaysOriginal)
+//        tabHomeMenu.selectedImage = UIImage(named: "ic_tabbar_home_selected")?.withRenderingMode(.alwaysOriginal)
+//        tabEnergyMenu.image = UIImage(named: "ic_tabbar_enegy")?.withRenderingMode(.alwaysOriginal)
+//        tabEnergyMenu.selectedImage = UIImage(named: "ic_tabbar_energy_selected")?.withRenderingMode(.alwaysOriginal)
+//        tabServiceMenu.image = UIImage(named: "ic_tabbar_service")?.withRenderingMode(.alwaysOriginal)
+//        tabServiceMenu.selectedImage = UIImage(named: "ic_tabbar_service_selected")?.withRenderingMode(.alwaysOriginal)
+//        tabNotiMenu.image = UIImage(named: "ic_tabbar_noti")?.withRenderingMode(.alwaysOriginal)
+//        tabNotiMenu.selectedImage = UIImage(named: "ic_tabbar_noti_selected")?.withRenderingMode(.alwaysOriginal)
+//        tabMeMenu.image = UIImage(named: "ic_tabbar_me")?.withRenderingMode(.alwaysOriginal)
+//        tabMeMenu.selectedImage = UIImage(named: "ic_tabbar_me_selected")?.withRenderingMode(.alwaysOriginal)
+        
+        
+        mainTabbar.items?.removeAll()
+        mainTabbar.items = [tabHomeMenu,tabNewsMenu,tabActivityMenu,tabSettingMenu]
+        
+        focusTabMenu(page: currentPage)
+        
+    }
+    
+    func focusTabMenu(page:SideMenuPage){
+        
+        switch page {
+        case .Home: mainTabbar.selectedItem = tabHomeMenu
+        case .News: mainTabbar.selectedItem = tabNewsMenu
+        case .Activity: mainTabbar.selectedItem = tabActivityMenu
+        case .Setting: mainTabbar.selectedItem = tabSettingMenu
+            
+        default: mainTabbar.selectedItem = nil
+        }
+    }
     
     func doSomething()
     {

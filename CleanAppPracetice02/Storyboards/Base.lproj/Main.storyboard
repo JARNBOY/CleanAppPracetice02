@@ -17,12 +17,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVy-cT-6jJ">
-                                <rect key="frame" x="0.0" y="779" width="414" height="83"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items/>
+                                <connections>
+                                    <outlet property="delegate" destination="gp4-ni-jDL" id="WSj-YB-nGd"/>
+                                </connections>
                             </tabBar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="607-Aq-x9h">
-                                <rect key="frame" x="0.0" y="44" width="414" height="735"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <connections>
                                     <segue destination="80r-g5-2eP" kind="embed" id="wHI-dz-9EP"/>
                                 </connections>
@@ -42,6 +45,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="xZj-d0-vhG"/>
+                    <connections>
+                        <outlet property="mainTabbar" destination="DVy-cT-6jJ" id="1XB-L7-Awb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WlF-cX-ElO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,12 +70,12 @@
             </objects>
             <point key="canvasLocation" x="976.81159420289862" y="53.571428571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Paging Menu Controller-->
         <scene sceneID="VpK-kJ-mZ3">
             <objects>
-                <viewController id="80r-g5-2eP" sceneMemberID="viewController">
+                <viewController id="80r-g5-2eP" customClass="PagingMenuController" customModule="CleanAppPracetice02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ElT-9C-OU3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="735"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>

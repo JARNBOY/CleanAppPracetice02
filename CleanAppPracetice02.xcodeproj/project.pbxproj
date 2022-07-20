@@ -67,6 +67,8 @@
 		FBD5E61F2887F20700009C7F /* MenuViewCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6152887F20700009C7F /* MenuViewCustomizable.swift */; };
 		FBD5E6202887F20700009C7F /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6162887F20700009C7F /* MenuItemView.swift */; };
 		FBD5E6222887F36C00009C7F /* AppDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6212887F36C00009C7F /* AppDirector.swift */; };
+		FBD5E6252887FE0300009C7F /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6242887FE0300009C7F /* ColorExtension.swift */; };
+		FBD5E6272887FF7000009C7F /* AppGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6262887FF7000009C7F /* AppGlobal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +153,8 @@
 		FBD5E6152887F20700009C7F /* MenuViewCustomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewCustomizable.swift; sourceTree = "<group>"; };
 		FBD5E6162887F20700009C7F /* MenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		FBD5E6212887F36C00009C7F /* AppDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDirector.swift; sourceTree = "<group>"; };
+		FBD5E6242887FE0300009C7F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		FBD5E6262887FF7000009C7F /* AppGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,7 @@
 				FBD5E5A82887E24F00009C7F /* Services */,
 				FBD5E5A72887E24400009C7F /* Models */,
 				FBD5E5AA2887E26200009C7F /* Scenes */,
+				FBD5E6262887FF7000009C7F /* AppGlobal.swift */,
 			);
 			path = CleanAppPracetice02;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 		FBD5E60B2887F19B00009C7F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FBD5E6232887FDE200009C7F /* View */,
 				FBD5E60C2887F1EE00009C7F /* PageUICore */,
 			);
 			path = UI;
@@ -438,6 +444,14 @@
 				FBD5E6122887F20700009C7F /* RootNavigationController.swift */,
 			);
 			path = PageUICore;
+			sourceTree = "<group>";
+		};
+		FBD5E6232887FDE200009C7F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FBD5E6242887FE0300009C7F /* ColorExtension.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -605,6 +619,8 @@
 				FBD5E5782887E15900009C7F /* AppDelegate.swift in Sources */,
 				FBD5E5C72887EE3D00009C7F /* RootInteractor.swift in Sources */,
 				FBD5E5C52887EE3D00009C7F /* RootModels.swift in Sources */,
+				FBD5E6272887FF7000009C7F /* AppGlobal.swift in Sources */,
+				FBD5E6252887FE0300009C7F /* ColorExtension.swift in Sources */,
 				FBD5E6042887F0BB00009C7F /* SettingPresenter.swift in Sources */,
 				FBD5E6052887F0BB00009C7F /* SettingWorker.swift in Sources */,
 				FBD5E5EA2887F08700009C7F /* NewsPresenter.swift in Sources */,
