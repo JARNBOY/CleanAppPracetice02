@@ -99,6 +99,10 @@
 		FBD5E5762887E15900009C7F /* CleanAppPracetice02 */ = {
 			isa = PBXGroup;
 			children = (
+				FBD5E5AA2887E26200009C7F /* Scenes */,
+				FBD5E5A92887E25A00009C7F /* Workers */,
+				FBD5E5A82887E24F00009C7F /* Services */,
+				FBD5E5A72887E24400009C7F /* Models */,
 				FBD5E5772887E15900009C7F /* AppDelegate.swift */,
 				FBD5E5792887E15900009C7F /* SceneDelegate.swift */,
 				FBD5E57B2887E15900009C7F /* ViewController.swift */,
@@ -125,6 +129,34 @@
 				FBD5E59A2887E15B00009C7F /* CleanAppPracetice02UITestsLaunchTests.swift */,
 			);
 			path = CleanAppPracetice02UITests;
+			sourceTree = "<group>";
+		};
+		FBD5E5A72887E24400009C7F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FBD5E5A82887E24F00009C7F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FBD5E5A92887E25A00009C7F /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		FBD5E5AA2887E26200009C7F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
