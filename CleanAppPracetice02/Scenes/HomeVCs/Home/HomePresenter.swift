@@ -14,18 +14,24 @@ import UIKit
 
 protocol HomePresentationLogic
 {
-  func presentSomething(response: Home.Something.Response)
+    func presentUpdateProfileAccessToken(response: Home.UserLogin.Response)
+    func presentShowLogin()
 }
 
 class HomePresenter: HomePresentationLogic
 {
-  weak var viewController: HomeDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: Home.Something.Response)
-  {
-    let viewModel = Home.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    weak var viewController: HomeDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentUpdateProfileAccessToken(response: Home.UserLogin.Response)
+    {
+        let profile = response.profile
+        let viewModel = Home.UserLogin.ViewModel(displayProfile: Home.UserLogin.ViewModel.DisplayProfileUser(phone: profile.phone, email: profile.email))
+        viewController?.displayUpdateProfileAccessToken(viewModel: viewModel)
+    }
+    
+    func presentShowLogin(){
+        viewController?.displayLogin()
+    }
 }

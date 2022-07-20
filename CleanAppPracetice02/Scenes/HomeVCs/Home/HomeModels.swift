@@ -16,16 +16,23 @@ enum Home
 {
   // MARK: Use cases
   
-  enum Something
+  enum UserLogin
   {
     struct Request
     {
     }
     struct Response
     {
+        var profile:Profile
     }
     struct ViewModel
     {
+        struct DisplayProfileUser{
+            var phone: String = ""
+            var email: String = ""
+        }
+        var displayProfile:DisplayProfileUser
+        
     }
   }
 }

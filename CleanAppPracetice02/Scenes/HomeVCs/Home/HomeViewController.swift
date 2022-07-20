@@ -12,14 +12,14 @@
 
 import UIKit
 
-protocol HomeDisplayLogic: class
+protocol HomeDisplayLogic: AnyObject
 {
-    func displaySomething(viewModel: Home.Something.ViewModel)
+    func displayUpdateProfileAccessToken(viewModel: Home.UserLogin.ViewModel)
+    func displayLogin()
 }
 
 class HomeViewController: UIViewController, HomeDisplayLogic
 {
-    
     // MARK: Destination ViewController
     class func instantiateFromStoryboard() -> HomeViewController {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
@@ -76,21 +76,23 @@ class HomeViewController: UIViewController, HomeDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        doSomething()
+        checkUserLogin()
     }
     
     // MARK: Do something
     
     //@IBOutlet weak var nameTextField: UITextField!
     
-    func doSomething()
+    func checkUserLogin()
     {
-        let request = Home.Something.Request()
-        interactor?.doSomething(request: request)
+        let request = Home.UserLogin.Request()
+        interactor?.checkIsUserLogin(request: request)
     }
     
-    func displaySomething(viewModel: Home.Something.ViewModel)
-    {
-        //nameTextField.text = viewModel.name
+    func displayUpdateProfileAccessToken(viewModel: Home.UserLogin.ViewModel){
+        print("update token then next process")
+    }
+    func displayLogin(){
+        router?.routeDisplayLogin()
     }
 }

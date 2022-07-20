@@ -14,7 +14,8 @@ import UIKit
 
 @objc protocol HomeRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+//  func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeDisplayLogin()
 }
 
 protocol HomeDataPassing
@@ -28,7 +29,9 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing
   var dataStore: HomeDataStore?
   
   // MARK: Routing
-  
+    func routeDisplayLogin(){
+        AppDirector.showLoginViewController()
+    }
   //func routeToSomewhere(segue: UIStoryboardSegue?)
   //{
   //  if let segue = segue {

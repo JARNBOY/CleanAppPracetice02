@@ -69,6 +69,7 @@
 		FBD5E6222887F36C00009C7F /* AppDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6212887F36C00009C7F /* AppDirector.swift */; };
 		FBD5E6252887FE0300009C7F /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6242887FE0300009C7F /* ColorExtension.swift */; };
 		FBD5E6272887FF7000009C7F /* AppGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6262887FF7000009C7F /* AppGlobal.swift */; };
+		FBD5E6292888066B00009C7F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6282888066B00009C7F /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		FBD5E6212887F36C00009C7F /* AppDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDirector.swift; sourceTree = "<group>"; };
 		FBD5E6242887FE0300009C7F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		FBD5E6262887FF7000009C7F /* AppGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobal.swift; sourceTree = "<group>"; };
+		FBD5E6282888066B00009C7F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 		FBD5E5A72887E24400009C7F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FBD5E6282888066B00009C7F /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				FBD5E6192887F20700009C7F /* PagingMenuControllerCustomizable.swift in Sources */,
 				FBD5E5DF2887F00D00009C7F /* HomeInteractor.swift in Sources */,
 				FBD5E6182887F20700009C7F /* MenuView.swift in Sources */,
+				FBD5E6292888066B00009C7F /* Profile.swift in Sources */,
 				FBD5E5DB2887F00D00009C7F /* HomeWorker.swift in Sources */,
 				FBD5E5DC2887F00D00009C7F /* HomeRouter.swift in Sources */,
 				FBD5E5B62887ED8300009C7F /* LoginViewController.swift in Sources */,

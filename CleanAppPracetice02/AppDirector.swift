@@ -57,8 +57,34 @@ class AppDirector: NSObject {
         
     }
     
-    //MARK: Push
+    //MARK: Controller - pushViewController
     
-    //MARK: Present
+    
+    static func showLoginViewController(){
+        
+        let loginViewController = LoginViewController.instantiateFromStoryboard()
+        _ = loginViewController.view
+        
+        self.rootViewController.navigationController?.pushViewController(loginViewController, animated: true)
+        
+    }
+    
+    //MARK: Dialog - presentViewController
+    
+//    static func showDialogSelectYearViewController(delegate:DialogSelectYearViewControllerDelegate){
+//
+//        let dialog = DialogSelectYearViewController.instantiateFromStoryboard()
+//        _ = dialog.view
+//        dialog.delegate = delegate
+//
+//        let nav = UINavigationController(rootViewController: dialog)
+//        nav.isNavigationBarHidden = true
+//        nav.modalPresentationStyle = .overCurrentContext
+//        nav.modalTransitionStyle = .coverVertical
+//
+//        self.rootViewController.present(nav, animated: true, completion: { () -> (Void) in
+//            print("show")
+//        })
+//    }
     
 }

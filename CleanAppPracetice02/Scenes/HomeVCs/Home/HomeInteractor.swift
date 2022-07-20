@@ -14,28 +14,33 @@ import UIKit
 
 protocol HomeBusinessLogic
 {
-  func doSomething(request: Home.Something.Request)
+    func checkIsUserLogin(request: Home.UserLogin.Request)
 }
 
 protocol HomeDataStore
 {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore
 {
-  var presenter: HomePresentationLogic?
-  var worker: HomeWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Home.Something.Request)
-  {
-    worker = HomeWorker()
-    worker?.doSomeWork()
     
-    let response = Home.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    
+    var presenter: HomePresentationLogic?
+    var worker: HomeWorker?
+    var profile: Profile = Profile()
+    
+    // MARK: Do something
+    func checkIsUserLogin(request: Home.UserLogin.Request) {
+        worker = HomeWorker()
+        worker?.doSomeWork()
+        
+        let response = Home.UserLogin.Response(profile: profile)
+        if response.profile.email.isEmpty{
+            presenter?.presentShowLogin()
+        }else{
+            presenter?.presentUpdateProfileAccessToken(response: response)
+        }
+        
+    }
 }
