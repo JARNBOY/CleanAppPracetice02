@@ -15,6 +15,7 @@ import UIKit
 @objc protocol LoginRoutingLogic
 {
   //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToHome()
 }
 
 protocol LoginDataPassing
@@ -28,7 +29,10 @@ class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
   var dataStore: LoginDataStore?
   
   // MARK: Routing
-  
+    func routeToHome(){
+        viewController?.navigationController?.popToRootViewController(animated: true)
+        AppDirector.showHome()
+    }
   //func routeToSomewhere(segue: UIStoryboardSegue?)
   //{
   //  if let segue = segue {

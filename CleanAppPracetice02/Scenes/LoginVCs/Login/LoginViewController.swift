@@ -15,6 +15,7 @@ import UIKit
 protocol LoginDisplayLogic: class
 {
     func displaySomething(viewModel: Login.Something.ViewModel)
+    func displayHome(viewModel: Login.Something.ViewModel)
 }
 
 class LoginViewController: UIViewController, LoginDisplayLogic
@@ -91,5 +92,15 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     func displaySomething(viewModel: Login.Something.ViewModel)
     {
         //nameTextField.text = viewModel.name
+    }
+    
+    // MARK: Login
+    @IBAction func login_click(){
+        let request = Login.Something.Request()
+        interactor?.doLogin(request: request)
+    }
+    
+    func displayHome(viewModel: Login.Something.ViewModel){
+        router?.routeToHome()
     }
 }
