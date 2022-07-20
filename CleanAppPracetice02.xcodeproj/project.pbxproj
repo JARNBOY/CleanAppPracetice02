@@ -57,6 +57,16 @@
 		FBD5E6072887F0BB00009C7F /* SettingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6012887F0BB00009C7F /* SettingModels.swift */; };
 		FBD5E6082887F0BB00009C7F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6022887F0BB00009C7F /* SettingViewController.swift */; };
 		FBD5E6092887F0BB00009C7F /* SettingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6032887F0BB00009C7F /* SettingInteractor.swift */; };
+		FBD5E6172887F20700009C7F /* Pagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E60D2887F20600009C7F /* Pagable.swift */; };
+		FBD5E6182887F20700009C7F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E60E2887F20600009C7F /* MenuView.swift */; };
+		FBD5E6192887F20700009C7F /* PagingMenuControllerCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E60F2887F20700009C7F /* PagingMenuControllerCustomizable.swift */; };
+		FBD5E61A2887F20700009C7F /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6102887F20700009C7F /* PagingViewController.swift */; };
+		FBD5E61B2887F20700009C7F /* PagingMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6112887F20700009C7F /* PagingMenuController.swift */; };
+		FBD5E61C2887F20700009C7F /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6122887F20700009C7F /* RootNavigationController.swift */; };
+		FBD5E61D2887F20700009C7F /* DrawerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6132887F20700009C7F /* DrawerMenu.swift */; };
+		FBD5E61E2887F20700009C7F /* MenuItemViewCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6142887F20700009C7F /* MenuItemViewCustomizable.swift */; };
+		FBD5E61F2887F20700009C7F /* MenuViewCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6152887F20700009C7F /* MenuViewCustomizable.swift */; };
+		FBD5E6202887F20700009C7F /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6162887F20700009C7F /* MenuItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +141,16 @@
 		FBD5E6012887F0BB00009C7F /* SettingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModels.swift; sourceTree = "<group>"; };
 		FBD5E6022887F0BB00009C7F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FBD5E6032887F0BB00009C7F /* SettingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInteractor.swift; sourceTree = "<group>"; };
+		FBD5E60D2887F20600009C7F /* Pagable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagable.swift; sourceTree = "<group>"; };
+		FBD5E60E2887F20600009C7F /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		FBD5E60F2887F20700009C7F /* PagingMenuControllerCustomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingMenuControllerCustomizable.swift; sourceTree = "<group>"; };
+		FBD5E6102887F20700009C7F /* PagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingViewController.swift; sourceTree = "<group>"; };
+		FBD5E6112887F20700009C7F /* PagingMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingMenuController.swift; sourceTree = "<group>"; };
+		FBD5E6122887F20700009C7F /* RootNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
+		FBD5E6132887F20700009C7F /* DrawerMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenu.swift; sourceTree = "<group>"; };
+		FBD5E6142887F20700009C7F /* MenuItemViewCustomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemViewCustomizable.swift; sourceTree = "<group>"; };
+		FBD5E6152887F20700009C7F /* MenuViewCustomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewCustomizable.swift; sourceTree = "<group>"; };
+		FBD5E6162887F20700009C7F /* MenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +207,7 @@
 				FBD5E5802887E15B00009C7F /* Assets.xcassets */,
 				FBD5E5822887E15B00009C7F /* LaunchScreen.storyboard */,
 				FBD5E5852887E15B00009C7F /* Info.plist */,
+				FBD5E60A2887F18E00009C7F /* Extensions */,
 				FBD5E5B82887EDBE00009C7F /* Storyboards */,
 				FBD5E5A92887E25A00009C7F /* Workers */,
 				FBD5E5A82887E24F00009C7F /* Services */,
@@ -386,6 +407,39 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		FBD5E60A2887F18E00009C7F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FBD5E60B2887F19B00009C7F /* UI */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBD5E60B2887F19B00009C7F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FBD5E60C2887F1EE00009C7F /* PageUICore */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FBD5E60C2887F1EE00009C7F /* PageUICore */ = {
+			isa = PBXGroup;
+			children = (
+				FBD5E6132887F20700009C7F /* DrawerMenu.swift */,
+				FBD5E6162887F20700009C7F /* MenuItemView.swift */,
+				FBD5E6142887F20700009C7F /* MenuItemViewCustomizable.swift */,
+				FBD5E60E2887F20600009C7F /* MenuView.swift */,
+				FBD5E6152887F20700009C7F /* MenuViewCustomizable.swift */,
+				FBD5E60D2887F20600009C7F /* Pagable.swift */,
+				FBD5E6112887F20700009C7F /* PagingMenuController.swift */,
+				FBD5E60F2887F20700009C7F /* PagingMenuControllerCustomizable.swift */,
+				FBD5E6102887F20700009C7F /* PagingViewController.swift */,
+				FBD5E6122887F20700009C7F /* RootNavigationController.swift */,
+			);
+			path = PageUICore;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -533,15 +587,21 @@
 				FBD5E5ED2887F08700009C7F /* NewsModels.swift in Sources */,
 				FBD5E5C42887EE3D00009C7F /* RootRouter.swift in Sources */,
 				FBD5E6062887F0BB00009C7F /* SettingRouter.swift in Sources */,
+				FBD5E6202887F20700009C7F /* MenuItemView.swift in Sources */,
 				FBD5E5B42887ED8300009C7F /* LoginRouter.swift in Sources */,
+				FBD5E61A2887F20700009C7F /* PagingViewController.swift in Sources */,
+				FBD5E6192887F20700009C7F /* PagingMenuControllerCustomizable.swift in Sources */,
 				FBD5E5DF2887F00D00009C7F /* HomeInteractor.swift in Sources */,
+				FBD5E6182887F20700009C7F /* MenuView.swift in Sources */,
 				FBD5E5DB2887F00D00009C7F /* HomeWorker.swift in Sources */,
 				FBD5E5DC2887F00D00009C7F /* HomeRouter.swift in Sources */,
 				FBD5E5B62887ED8300009C7F /* LoginViewController.swift in Sources */,
 				FBD5E5EB2887F08700009C7F /* NewsWorker.swift in Sources */,
 				FBD5E57C2887E15900009C7F /* ViewController.swift in Sources */,
 				FBD5E5EF2887F08700009C7F /* NewsInteractor.swift in Sources */,
+				FBD5E61E2887F20700009C7F /* MenuItemViewCustomizable.swift in Sources */,
 				FBD5E5DD2887F00D00009C7F /* HomeModels.swift in Sources */,
+				FBD5E6172887F20700009C7F /* Pagable.swift in Sources */,
 				FBD5E5782887E15900009C7F /* AppDelegate.swift in Sources */,
 				FBD5E5C72887EE3D00009C7F /* RootInteractor.swift in Sources */,
 				FBD5E5C52887EE3D00009C7F /* RootModels.swift in Sources */,
@@ -556,8 +616,12 @@
 				FBD5E6072887F0BB00009C7F /* SettingModels.swift in Sources */,
 				FBD5E5F72887F0A000009C7F /* ActivityPresenter.swift in Sources */,
 				FBD5E5F92887F0A000009C7F /* ActivityRouter.swift in Sources */,
+				FBD5E61F2887F20700009C7F /* MenuViewCustomizable.swift in Sources */,
+				FBD5E61C2887F20700009C7F /* RootNavigationController.swift in Sources */,
 				FBD5E5C32887EE3D00009C7F /* RootWorker.swift in Sources */,
 				FBD5E57A2887E15900009C7F /* SceneDelegate.swift in Sources */,
+				FBD5E61D2887F20700009C7F /* DrawerMenu.swift in Sources */,
+				FBD5E61B2887F20700009C7F /* PagingMenuController.swift in Sources */,
 				FBD5E6082887F0BB00009C7F /* SettingViewController.swift in Sources */,
 				FBD5E5B72887ED8300009C7F /* LoginInteractor.swift in Sources */,
 				FBD5E5DA2887F00D00009C7F /* HomePresenter.swift in Sources */,
