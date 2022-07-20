@@ -16,6 +16,10 @@ import UIKit
 @objc protocol RootRoutingLogic
 {
 //    func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToHomeMenu()
+    func routeToNewsMenu()
+    func routeToActivityMenu()
+    func routeToSettingMenu()
 }
 
 protocol RootDataPassing
@@ -28,10 +32,20 @@ class RootRouter: NSObject, RootRoutingLogic, RootDataPassing
     weak var viewController: RootViewController?
     var dataStore: RootDataStore?
     
-    
-    
     // MARK: Routing
     
+    func routeToHomeMenu(){
+        AppDirector.showHome()
+    }
+    func routeToNewsMenu(){
+        AppDirector.showNews()
+    }
+    func routeToActivityMenu(){
+        AppDirector.showActivity()
+    }
+    func routeToSettingMenu(){
+        AppDirector.showSetting()
+    }
     //func routeToSomewhere(segue: UIStoryboardSegue?)
     //{
     //  if let segue = segue {

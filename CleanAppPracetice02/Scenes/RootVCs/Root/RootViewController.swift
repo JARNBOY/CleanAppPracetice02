@@ -254,10 +254,10 @@ class RootViewController: UIViewController, RootDisplayLogic, UITabBarDelegate
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem){
         
         switch item {
-        case tabHomeMenu: AppDirector.showHome()
-        case tabNewsMenu: AppDirector.showNews()
-        case tabActivityMenu: AppDirector.showActivity()
-        case tabSettingMenu: AppDirector.showSetting()
+        case tabHomeMenu: router?.routeToHomeMenu()
+        case tabNewsMenu: router?.routeToNewsMenu()
+        case tabActivityMenu: router?.routeToActivityMenu()
+        case tabSettingMenu: router?.routeToSettingMenu()
             
         default:break
 
