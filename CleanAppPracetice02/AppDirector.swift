@@ -39,19 +39,19 @@ class AppDirector: NSObject {
         AppGlobal.sharedInstance().activeDrawingMenu = DrawerMenu.Home()
     }
     
-    static func showEnergy(){
+    static func showNews(){
         rootViewController.showView(page: .News)
         AppGlobal.sharedInstance().activeDrawingMenu = DrawerMenu.News()
         
     }
     
-    static func showService(){
+    static func showActivity(){
         rootViewController.showView(page: .Activity)
         AppGlobal.sharedInstance().activeDrawingMenu = DrawerMenu.Activity()
         
     }
     
-    static func showNoti(){
+    static func showSetting(){
         rootViewController.showView(page: .Setting)
         AppGlobal.sharedInstance().activeDrawingMenu = DrawerMenu.Setting()
         

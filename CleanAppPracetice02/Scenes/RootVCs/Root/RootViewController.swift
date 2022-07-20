@@ -219,60 +219,6 @@ class RootViewController: UIViewController, RootDisplayLogic, UITabBarDelegate
         tabNewsMenu = UITabBarItem(title: "News", image: UIImage(named: ""), selectedImage: UIImage(named: ""))
         tabActivityMenu = UITabBarItem(title: "Activity", image: UIImage(named: ""), selectedImage: UIImage(named: ""))
         tabSettingMenu = UITabBarItem(title: "Setting", image: UIImage(named: ""), selectedImage: UIImage(named: ""))
-//        tabHomeMenu = UITabBarItem(title: "Home", image: UIImage(named: "ic_tabbar_home"), selectedImage: UIImage(named: "ic_tabbar_home_selected"))
-//        tabNewsMenu = UITabBarItem(title: "News", image: UIImage(named: "ic_tabbar_enegy"), selectedImage: UIImage(named: "ic_tabbar_energy_selected"))
-//        tabActivityMenu = UITabBarItem(title: "Activity", image: UIImage(named: "ic_tabbar_service"), selectedImage: UIImage(named: "ic_tabbar_service_selected"))
-//        tabSettingMenu = UITabBarItem(title: "Setting", image: UIImage(named: "ic_tabbar_noti"), selectedImage: UIImage(named: "ic_tabbar_noti_selected"))
-        
-//        let font = UIFont(name: "Prompt-SemiBold", size: 12.0)
-//        if font != nil {
-//            tabHomeMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor.darkGray], for: .normal)
-//
-//            tabEnergyMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor.darkGray], for: .normal)
-//
-//            tabServiceMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor.darkGray], for: .normal)
-//
-//            tabNotiMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor.darkGray], for: .normal)
-//
-//            tabMeMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor.darkGray], for: .normal)
-//
-//            if #available(iOS 13, *) {
-//                let appearance = UITabBarAppearance()
-//                appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor: UIColor(hexString: "#1E408F")]
-//                appearance.backgroundColor = .white
-//
-//                tabHomeMenu.standardAppearance = appearance
-//                tabEnergyMenu.standardAppearance = appearance
-//                tabServiceMenu.standardAppearance = appearance
-//                tabNotiMenu.standardAppearance = appearance
-//                tabMeMenu.standardAppearance = appearance
-//            }else{
-//
-//                UITabBar.appearance().backgroundColor = .white
-//
-//                tabHomeMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor(hexString: "#1E408F")], for: .selected)
-//                tabEnergyMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor(hexString: "#1E408F")], for: .selected)
-//                tabServiceMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor(hexString: "#1E408F")], for: .selected)
-//                tabNotiMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor(hexString: "#1E408F")], for: .selected)
-//                tabMeMenu.setTitleTextAttributes([NSAttributedString.Key.font:font!,NSAttributedString.Key.foregroundColor:UIColor(hexString: "#1E408F")], for: .selected)
-//            }
-//
-//
-//
-//
-//        }
-        
-//        tabHomeMenu.image = UIImage(named: "ic_tabbar_home")?.withRenderingMode(.alwaysOriginal)
-//        tabHomeMenu.selectedImage = UIImage(named: "ic_tabbar_home_selected")?.withRenderingMode(.alwaysOriginal)
-//        tabEnergyMenu.image = UIImage(named: "ic_tabbar_enegy")?.withRenderingMode(.alwaysOriginal)
-//        tabEnergyMenu.selectedImage = UIImage(named: "ic_tabbar_energy_selected")?.withRenderingMode(.alwaysOriginal)
-//        tabServiceMenu.image = UIImage(named: "ic_tabbar_service")?.withRenderingMode(.alwaysOriginal)
-//        tabServiceMenu.selectedImage = UIImage(named: "ic_tabbar_service_selected")?.withRenderingMode(.alwaysOriginal)
-//        tabNotiMenu.image = UIImage(named: "ic_tabbar_noti")?.withRenderingMode(.alwaysOriginal)
-//        tabNotiMenu.selectedImage = UIImage(named: "ic_tabbar_noti_selected")?.withRenderingMode(.alwaysOriginal)
-//        tabMeMenu.image = UIImage(named: "ic_tabbar_me")?.withRenderingMode(.alwaysOriginal)
-//        tabMeMenu.selectedImage = UIImage(named: "ic_tabbar_me_selected")?.withRenderingMode(.alwaysOriginal)
-        
         
         mainTabbar.items?.removeAll()
         mainTabbar.items = [tabHomeMenu,tabNewsMenu,tabActivityMenu,tabSettingMenu]
@@ -302,5 +248,19 @@ class RootViewController: UIViewController, RootDisplayLogic, UITabBarDelegate
     func displaySomething(viewModel: Root.Something.ViewModel)
     {
         //nameTextField.text = viewModel.name
+    }
+    
+    // UITabBarDelegate
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem){
+        
+        switch item {
+        case tabHomeMenu: AppDirector.showHome()
+        case tabNewsMenu: AppDirector.showNews()
+        case tabActivityMenu: AppDirector.showActivity()
+        case tabSettingMenu: AppDirector.showSetting()
+            
+        default:break
+
+        }
     }
 }
