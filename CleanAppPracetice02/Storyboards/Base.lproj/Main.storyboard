@@ -11,7 +11,7 @@
         <!--Home-->
         <scene sceneID="rTP-86-2nT">
             <objects>
-                <viewController id="gp4-ni-jDL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RootViewController" id="gp4-ni-jDL" customClass="RootViewController" customModule="CleanAppPracetice02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SBF-06-of1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -23,6 +23,12 @@
 		FBD5E5B62887ED8300009C7F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E5B02887ED8300009C7F /* LoginViewController.swift */; };
 		FBD5E5B72887ED8300009C7F /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E5B12887ED8300009C7F /* LoginInteractor.swift */; };
 		FBD5E5BA2887EDE200009C7F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD5E5B92887EDE200009C7F /* Login.storyboard */; };
+		FBD5E5C22887EE3D00009C7F /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E5BC2887EE3D00009C7F /* RootPresenter.swift */; };
+		FBD5E5C32887EE3D00009C7F /* RootWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E5BD2887EE3D00009C7F /* RootWorker.swift */; };
+		FBD5E5C42887EE3D00009C7F /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E5BE2887EE3D00009C7F /* RootRouter.swift */; };
+		FBD5E5C52887EE3D00009C7F /* RootModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E5BF2887EE3D00009C7F /* RootModels.swift */; };
+		FBD5E5C62887EE3D00009C7F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E5C02887EE3D00009C7F /* RootViewController.swift */; };
+		FBD5E5C72887EE3D00009C7F /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E5C12887EE3D00009C7F /* RootInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +69,12 @@
 		FBD5E5B02887ED8300009C7F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FBD5E5B12887ED8300009C7F /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		FBD5E5B92887EDE200009C7F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		FBD5E5BC2887EE3D00009C7F /* RootPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
+		FBD5E5BD2887EE3D00009C7F /* RootWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootWorker.swift; sourceTree = "<group>"; };
+		FBD5E5BE2887EE3D00009C7F /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		FBD5E5BF2887EE3D00009C7F /* RootModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModels.swift; sourceTree = "<group>"; };
+		FBD5E5C02887EE3D00009C7F /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		FBD5E5C12887EE3D00009C7F /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +181,7 @@
 		FBD5E5AA2887E26200009C7F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FBD5E5BB2887EE1D00009C7F /* Root */,
 				FBD5E5AB2887ED6D00009C7F /* Login */,
 			);
 			path = Scenes;
@@ -194,6 +207,19 @@
 				FBD5E5B92887EDE200009C7F /* Login.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FBD5E5BB2887EE1D00009C7F /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				FBD5E5BC2887EE3D00009C7F /* RootPresenter.swift */,
+				FBD5E5BD2887EE3D00009C7F /* RootWorker.swift */,
+				FBD5E5BE2887EE3D00009C7F /* RootRouter.swift */,
+				FBD5E5BF2887EE3D00009C7F /* RootModels.swift */,
+				FBD5E5C02887EE3D00009C7F /* RootViewController.swift */,
+				FBD5E5C12887EE3D00009C7F /* RootInteractor.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,13 +354,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD5E5C22887EE3D00009C7F /* RootPresenter.swift in Sources */,
 				FBD5E5B32887ED8300009C7F /* LoginWorker.swift in Sources */,
 				FBD5E5B22887ED8300009C7F /* LoginPresenter.swift in Sources */,
 				FBD5E5B52887ED8300009C7F /* LoginModels.swift in Sources */,
+				FBD5E5C42887EE3D00009C7F /* RootRouter.swift in Sources */,
 				FBD5E5B42887ED8300009C7F /* LoginRouter.swift in Sources */,
 				FBD5E5B62887ED8300009C7F /* LoginViewController.swift in Sources */,
 				FBD5E57C2887E15900009C7F /* ViewController.swift in Sources */,
 				FBD5E5782887E15900009C7F /* AppDelegate.swift in Sources */,
+				FBD5E5C72887EE3D00009C7F /* RootInteractor.swift in Sources */,
+				FBD5E5C52887EE3D00009C7F /* RootModels.swift in Sources */,
+				FBD5E5C62887EE3D00009C7F /* RootViewController.swift in Sources */,
+				FBD5E5C32887EE3D00009C7F /* RootWorker.swift in Sources */,
 				FBD5E57A2887E15900009C7F /* SceneDelegate.swift in Sources */,
 				FBD5E5B72887ED8300009C7F /* LoginInteractor.swift in Sources */,
 			);
