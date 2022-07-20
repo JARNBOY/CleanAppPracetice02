@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FBD5E5782887E15900009C7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E5772887E15900009C7F /* AppDelegate.swift */; };
 		FBD5E57A2887E15900009C7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E5792887E15900009C7F /* SceneDelegate.swift */; };
-		FBD5E57C2887E15900009C7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E57B2887E15900009C7F /* ViewController.swift */; };
 		FBD5E57F2887E15900009C7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD5E57D2887E15900009C7F /* Main.storyboard */; };
 		FBD5E5812887E15B00009C7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD5E5802887E15B00009C7F /* Assets.xcassets */; };
 		FBD5E5842887E15B00009C7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD5E5822887E15B00009C7F /* LaunchScreen.storyboard */; };
@@ -67,6 +66,7 @@
 		FBD5E61E2887F20700009C7F /* MenuItemViewCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6142887F20700009C7F /* MenuItemViewCustomizable.swift */; };
 		FBD5E61F2887F20700009C7F /* MenuViewCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6152887F20700009C7F /* MenuViewCustomizable.swift */; };
 		FBD5E6202887F20700009C7F /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6162887F20700009C7F /* MenuItemView.swift */; };
+		FBD5E6222887F36C00009C7F /* AppDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E6212887F36C00009C7F /* AppDirector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +90,6 @@
 		FBD5E5742887E15900009C7F /* CleanAppPracetice02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanAppPracetice02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD5E5772887E15900009C7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBD5E5792887E15900009C7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FBD5E57B2887E15900009C7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FBD5E57E2887E15900009C7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBD5E5802887E15B00009C7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBD5E5832887E15B00009C7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -151,6 +150,7 @@
 		FBD5E6142887F20700009C7F /* MenuItemViewCustomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemViewCustomizable.swift; sourceTree = "<group>"; };
 		FBD5E6152887F20700009C7F /* MenuViewCustomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewCustomizable.swift; sourceTree = "<group>"; };
 		FBD5E6162887F20700009C7F /* MenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		FBD5E6212887F36C00009C7F /* AppDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDirector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +203,7 @@
 			children = (
 				FBD5E5772887E15900009C7F /* AppDelegate.swift */,
 				FBD5E5792887E15900009C7F /* SceneDelegate.swift */,
-				FBD5E57B2887E15900009C7F /* ViewController.swift */,
+				FBD5E6212887F36C00009C7F /* AppDirector.swift */,
 				FBD5E5802887E15B00009C7F /* Assets.xcassets */,
 				FBD5E5822887E15B00009C7F /* LaunchScreen.storyboard */,
 				FBD5E5852887E15B00009C7F /* Info.plist */,
@@ -597,7 +597,7 @@
 				FBD5E5DC2887F00D00009C7F /* HomeRouter.swift in Sources */,
 				FBD5E5B62887ED8300009C7F /* LoginViewController.swift in Sources */,
 				FBD5E5EB2887F08700009C7F /* NewsWorker.swift in Sources */,
-				FBD5E57C2887E15900009C7F /* ViewController.swift in Sources */,
+				FBD5E6222887F36C00009C7F /* AppDirector.swift in Sources */,
 				FBD5E5EF2887F08700009C7F /* NewsInteractor.swift in Sources */,
 				FBD5E61E2887F20700009C7F /* MenuItemViewCustomizable.swift in Sources */,
 				FBD5E5DD2887F00D00009C7F /* HomeModels.swift in Sources */,

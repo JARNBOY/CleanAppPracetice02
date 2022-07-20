@@ -12,6 +12,30 @@
 
 import UIKit
 
+//MARK: === For Paging Controller ===
+enum SideMenuPage:Int {
+    case Home = 0
+    case News = 1
+    case Activity = 2
+    case Setting = 3
+    
+    
+    func index() -> Int {
+        return self.rawValue
+    }
+    
+    func string() -> String {
+        
+        switch self {
+        case .Home: return DrawerMenu.Home()
+        case .News: return DrawerMenu.News()
+        case .Activity: return DrawerMenu.Activity()
+        case .Setting: return DrawerMenu.Setting()
+        }
+    }
+}
+
+
 @objc protocol RootRoutingLogic
 {
   //func routeToSomewhere(segue: UIStoryboardSegue?)

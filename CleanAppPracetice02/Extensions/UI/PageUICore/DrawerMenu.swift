@@ -9,10 +9,9 @@ import Foundation
 
 enum DrawerMenuIdentifier: String {
     case Home = "Home"
-    case Energy = "Energy"
-    case Service = "Service"
-    case Noti = "Noti"
-    case Me = "Me"
+    case News = "News"
+    case Activity = "Activity"
+    case Setting = "Setting"
     //=====
     case DebugAPI = "DebugAPI"
     case Debug = "Debug"
@@ -29,24 +28,20 @@ class DrawerMenu: NSObject {
         return DrawerMenuIdentifier.Home.string()
     }
     
-    class func Energy() -> String {
+    class func News() -> String {
         
-        return DrawerMenuIdentifier.Energy.string()
+        return DrawerMenuIdentifier.News.string()
     }
     
-    class func Service() -> String {
+    class func Activity() -> String {
         
-        return DrawerMenuIdentifier.Service.string()
+        return DrawerMenuIdentifier.Activity.string()
     }
     
     
-    class func Noti() -> String {
+    class func Setting() -> String {
         
-        return DrawerMenuIdentifier.Noti.string()
-    }
-    
-    class func Me() -> String {
-        return DrawerMenuIdentifier.Me.string()
+        return DrawerMenuIdentifier.Setting.string()
     }
     
 }
