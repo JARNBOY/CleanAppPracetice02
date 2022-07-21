@@ -14,8 +14,8 @@ import UIKit
 
 protocol LoginPresentationLogic
 {
-    func presentSomething(response: Login.Something.Response)
-    func presentSubmitLogin(response: Login.Something.Response)
+    func presentSomething(response: Login.LoginSubmit.Response)
+    func presentSubmitLogin(response: Login.LoginSubmit.Response)
 }
 
 class LoginPresenter: LoginPresentationLogic
@@ -24,14 +24,14 @@ class LoginPresenter: LoginPresentationLogic
     
     // MARK: Do something
     
-    func presentSomething(response: Login.Something.Response)
+    func presentSomething(response: Login.LoginSubmit.Response)
     {
-        let viewModel = Login.Something.ViewModel()
+        let viewModel = Login.LoginSubmit.ViewModel(accessToken: "")
         viewController?.displaySomething(viewModel: viewModel)
     }
     
-    func presentSubmitLogin(response: Login.Something.Response){
-        let viewModel = Login.Something.ViewModel()
+    func presentSubmitLogin(response: Login.LoginSubmit.Response){
+        let viewModel = Login.LoginSubmit.ViewModel(accessToken: "AssumeThisTextIsAccessToken")
         viewController?.displayHome(viewModel: viewModel)
     }
 }

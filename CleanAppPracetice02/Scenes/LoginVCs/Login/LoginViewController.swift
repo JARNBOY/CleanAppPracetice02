@@ -14,8 +14,8 @@ import UIKit
 
 protocol LoginDisplayLogic: class
 {
-    func displaySomething(viewModel: Login.Something.ViewModel)
-    func displayHome(viewModel: Login.Something.ViewModel)
+    func displaySomething(viewModel: Login.LoginSubmit.ViewModel)
+    func displayHome(viewModel: Login.LoginSubmit.ViewModel)
 }
 
 class LoginViewController: UIViewController, LoginDisplayLogic
@@ -85,22 +85,37 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     
     func doSomething()
     {
-        let request = Login.Something.Request()
+        let request = Login.LoginSubmit.Request(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "")
         interactor?.doSomething(request: request)
     }
     
-    func displaySomething(viewModel: Login.Something.ViewModel)
+    func displaySomething(viewModel: Login.LoginSubmit.ViewModel)
     {
         //nameTextField.text = viewModel.name
     }
     
     // MARK: Login
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBAction func usernameTextfieldAction(_ sender: Any) {
+        print("usernameTextfieldAction : \(usernameTextField.text ?? "")")
+    }
+    
+    @IBAction func passwordTextFieldAction(_ sender: Any) {
+        print("passwordTextFieldAction : \(usernameTextField.text ?? "")")
+    }
+    
+    
     @IBAction func login_click(){
-        let request = Login.Something.Request()
+        let request = Login.LoginSubmit.Request(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "")
         interactor?.doLogin(request: request)
     }
     
-    func displayHome(viewModel: Login.Something.ViewModel){
-        router?.routeToHome()
+    func displayHome(viewModel: Login.LoginSubmit.ViewModel){
+        if !viewModel.accessToken.isEmpty{
+            router?.routeToHome()
+        }
+        
     }
 }

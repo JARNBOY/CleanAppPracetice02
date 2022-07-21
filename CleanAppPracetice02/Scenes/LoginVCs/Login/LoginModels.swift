@@ -16,16 +16,22 @@ enum Login
 {
   // MARK: Use cases
   
-  enum Something
+  enum LoginSubmit
   {
     struct Request
     {
+        let username:String
+        let password:String
     }
     struct Response
     {
+        let success:Bool
+        let username:String = ""
+        let password:String = ""
     }
     struct ViewModel
     {
+        let accessToken:String
     }
   }
 }

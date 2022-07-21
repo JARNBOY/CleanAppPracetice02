@@ -24,6 +24,10 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="usernameTextfieldAction:" destination="C0R-tR-ZfS" eventType="editingChanged" id="82p-DI-7Nn"/>
+                                    <outlet property="delegate" destination="C0R-tR-ZfS" id="sxd-33-uyi"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="chz-KP-W68">
                                 <rect key="frame" x="30" y="506" width="354" height="44"/>
@@ -33,6 +37,10 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="passwordTextFieldAction:" destination="C0R-tR-ZfS" eventType="editingDidEnd" id="pgr-am-x5J"/>
+                                    <outlet property="delegate" destination="C0R-tR-ZfS" id="j4c-Yn-pzB"/>
+                                </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fNj-gw-oWD">
                                 <rect key="frame" x="157" y="254" width="100" height="100"/>
@@ -91,6 +99,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KTR-3y-XCf"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="chz-KP-W68" id="MFg-Z1-lU8"/>
+                        <outlet property="usernameTextField" destination="4HK-tw-q9B" id="bFA-vn-fll"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kdu-5M-Fgw" sceneMemberID="firstResponder"/>
             </objects>

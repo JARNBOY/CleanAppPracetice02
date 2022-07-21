@@ -14,39 +14,53 @@ import UIKit
 
 protocol LoginBusinessLogic
 {
-    func doSomething(request: Login.Something.Request)
-    func doLogin(request: Login.Something.Request)
-    func doValidate(request: Login.Something.Request)
+    func doSomething(request: Login.LoginSubmit.Request)
+    func doLogin(request: Login.LoginSubmit.Request)
+    func doValidate(request: Login.LoginSubmit.Request)
 }
 
 protocol LoginDataStore
 {
-    //var name: String { get set }
+    var username: String { get set }
+    var password: String { get set }
 }
 
 class LoginInteractor: LoginBusinessLogic, LoginDataStore
 {
+    
+    
     var presenter: LoginPresentationLogic?
     var worker: LoginWorker?
-    //var name: String = ""
     
+    var username: String = ""
+    var password: String = ""
     // MARK: Do something
     
-    func doSomething(request: Login.Something.Request)
+    func doSomething(request: Login.LoginSubmit.Request)
     {
         worker = LoginWorker()
         worker?.doSomeWork()
         
-        let response = Login.Something.Response()
+        let response = Login.LoginSubmit.Response(success: false)
         presenter?.presentSomething(response: response)
     }
     
-    func doLogin(request: Login.Something.Request){
-        let response = Login.Something.Response()
-        presenter?.presentSubmitLogin(response: response)
+    func doLogin(request: Login.LoginSubmit.Request){
+        username = request.username
+        password = request.password
+        #warning("Assume case is success")
+        if !username.isEmpty && !password.isEmpty{
+            let response = Login.LoginSubmit.Response(success: true)
+            presenter?.presentSubmitLogin(response: response)
+        }else{
+            let response = Login.LoginSubmit.Response(success: false)
+            presenter?.presentSomething(response: response)
+            
+        }
+        
     }
     
-    func doValidate(request: Login.Something.Request){
+    func doValidate(request: Login.LoginSubmit.Request){
 //        let response = Login.Something.Response()
 //        presenter?.presentSubmitLogin(response: response)
     }
