@@ -18,10 +18,10 @@ class NewsAPI: NewsStoreProtocol, NewsStoreUtilityProtocol{
         URLRequest.load(resource: ArticleList.all)
             .subscribe(onNext:{ result in
                 if let result = result{
-                    if !result.isEmpty{
-                        completion(result, nil)
+                    if !result.articles.isEmpty{
+                        completion(result.articles, nil)
                     }else{
-                        completion(result, NewsStoreError.CannotFetch("array is empty"))
+                        completion(result.articles, NewsStoreError.CannotFetch("array is empty"))
                     }
                     
                 }else{

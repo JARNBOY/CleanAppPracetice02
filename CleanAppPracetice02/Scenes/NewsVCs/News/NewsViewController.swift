@@ -19,6 +19,8 @@ protocol NewsDisplayLogic: AnyObject
 
 class NewsViewController: UIViewController, NewsDisplayLogic
 {
+    
+    
     // MARK: Destination ViewController
     class func instantiateFromStoryboard() -> NewsViewController {
         let storyboard = UIStoryboard(name: "News", bundle: nil)
@@ -75,12 +77,20 @@ class NewsViewController: UIViewController, NewsDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        initView()
         fetchNews()
     }
     
-    // MARK: Get News Articles
+    // MARK: InitNewsView
+    @IBOutlet weak var tableView: UITableView!
     
-    //@IBOutlet weak var nameTextField: UITextField!
+    private func initView(){
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    // MARK: Get News Articles
+    var displayedNewsList: [Article] = []
     
     func fetchNews()
     {
@@ -90,6 +100,31 @@ class NewsViewController: UIViewController, NewsDisplayLogic
     
     func displayArtileNews(viewModel: News.GetNews.ViewModel)
     {
-        //nameTextField.text = viewModel.name
+        DispatchQueue.main.async {
+            self.displayedNewsList = viewModel.displayedNewsList
+            self.tableView.reloadData()
+        }
+        
+    }
+}
+
+
+extension NewsViewController:UITableViewDelegate,UITableViewDataSource{
+    //MARK: TableViewDelegate
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.displayedNewsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath) as! ArticleTableViewCell
+        
+        cell.titleLabel.text = displayedNewsList[indexPath.row].title
+        cell.descriptionLabel.text = displayedNewsList[indexPath.row].description
+        
+        return cell
     }
 }

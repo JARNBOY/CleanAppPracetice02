@@ -58,6 +58,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="4va-zn-Evz"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="pTR-Bn-egh"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QO6-fq-JXz">
                                 <rect key="frame" x="16" y="44" width="382" height="65"/>
@@ -89,6 +93,9 @@
                             <constraint firstItem="QO6-fq-JXz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="yBF-lF-ajF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="gob-P6-r9m" id="iqN-RY-s6H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
