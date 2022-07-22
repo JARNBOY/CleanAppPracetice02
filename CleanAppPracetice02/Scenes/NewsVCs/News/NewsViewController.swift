@@ -12,9 +12,9 @@
 
 import UIKit
 
-protocol NewsDisplayLogic: class
+protocol NewsDisplayLogic: AnyObject
 {
-    func displaySomething(viewModel: News.Something.ViewModel)
+    func displayArtileNews(viewModel: News.GetNews.ViewModel)
 }
 
 class NewsViewController: UIViewController, NewsDisplayLogic
@@ -75,20 +75,20 @@ class NewsViewController: UIViewController, NewsDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        doSomething()
+        fetchNews()
     }
     
-    // MARK: Do something
+    // MARK: Get News Articles
     
     //@IBOutlet weak var nameTextField: UITextField!
     
-    func doSomething()
+    func fetchNews()
     {
-        let request = News.Something.Request()
-        interactor?.doSomething(request: request)
+        let request = News.GetNews.Request()
+        interactor?.loadArticleNews(request: request)
     }
     
-    func displaySomething(viewModel: News.Something.ViewModel)
+    func displayArtileNews(viewModel: News.GetNews.ViewModel)
     {
         //nameTextField.text = viewModel.name
     }

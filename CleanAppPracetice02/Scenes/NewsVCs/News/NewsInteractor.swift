@@ -14,28 +14,31 @@ import UIKit
 
 protocol NewsBusinessLogic
 {
-  func doSomething(request: News.Something.Request)
+  func loadArticleNews(request: News.GetNews.Request)
+    
 }
 
 protocol NewsDataStore
 {
-  //var name: String { get set }
+    var articles:[Article] { get set }
 }
 
 class NewsInteractor: NewsBusinessLogic, NewsDataStore
 {
   var presenter: NewsPresentationLogic?
-  var worker: NewsWorker?
-  //var name: String = ""
+  var newsWorker: NewsWorker = NewsWorker(newsStore: NewsAPI())
+  var articles: [Article] = []
   
   // MARK: Do something
   
-  func doSomething(request: News.Something.Request)
+  func loadArticleNews(request: News.GetNews.Request)
   {
-    worker = NewsWorker()
-    worker?.doSomeWork()
+      newsWorker.fetchArticleNewsData(completionHandler: { list in
+          self.articles = list.articles
+          let response = News.GetNews.Response(articles: list.articles)
+          self.presenter?.presentArticleNews(response: response)
+      })
     
-    let response = News.Something.Response()
-    presenter?.presentSomething(response: response)
+    
   }
 }

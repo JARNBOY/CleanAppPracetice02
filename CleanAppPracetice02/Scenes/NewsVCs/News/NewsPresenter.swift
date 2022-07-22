@@ -14,7 +14,7 @@ import UIKit
 
 protocol NewsPresentationLogic
 {
-  func presentSomething(response: News.Something.Response)
+  func presentArticleNews(response: News.GetNews.Response)
 }
 
 class NewsPresenter: NewsPresentationLogic
@@ -23,9 +23,9 @@ class NewsPresenter: NewsPresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: News.Something.Response)
+  func presentArticleNews(response: News.GetNews.Response)
   {
-    let viewModel = News.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
+      let viewModel = News.GetNews.ViewModel(displayedNewsList: response.articles)
+    viewController?.displayArtileNews(viewModel: viewModel)
   }
 }

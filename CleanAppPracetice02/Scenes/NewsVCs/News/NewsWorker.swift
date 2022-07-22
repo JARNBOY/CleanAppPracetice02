@@ -14,7 +14,29 @@ import UIKit
 
 class NewsWorker
 {
-  func doSomeWork()
-  {
-  }
+    var newsStore: NewsStoreProtocol
+    
+    init(newsStore: NewsStoreProtocol)
+    {
+      self.newsStore = newsStore
+    }
+    
+    func fetchArticleNewsData(completionHandler: @escaping (ArticleList) -> Void)
+    {
+        newsStore.fetchArticleNewsData { articles, error in
+            if let articles = articles{
+                completionHandler(ArticleList(articles: articles))
+            }
+        }
+    }
+}
+
+// MARK: - News API
+
+protocol NewsStoreProtocol{
+    func fetchArticleNewsData(completion:@escaping ([Article]?,NewsStoreError?) -> Void)
+}
+
+protocol NewsStoreUtilityProtocol {
+    
 }

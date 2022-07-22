@@ -16,16 +16,18 @@ enum News
 {
   // MARK: Use cases
   
-  enum Something
+  enum GetNews
   {
     struct Request
     {
     }
     struct Response
     {
+        var articles: [Article]
     }
     struct ViewModel
     {
+        var displayedNewsList: [Article]
     }
   }
 }
