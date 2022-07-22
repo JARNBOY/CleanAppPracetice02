@@ -21,9 +21,9 @@ class NewsWorker
       self.newsStore = newsStore
     }
     
-    func fetchArticleNewsData(completionHandler: @escaping (ArticleList) -> Void)
+    func fetchNewsData(country:String,completionHandler: @escaping (ArticleList) -> Void)
     {
-        newsStore.fetchArticleNewsData { articles, error in
+        newsStore.fetchArticleNewsData(country: country) { articles, error in
             if let articles = articles{
                 completionHandler(ArticleList(articles: articles))
             }
@@ -34,7 +34,7 @@ class NewsWorker
 // MARK: - News API
 
 protocol NewsStoreProtocol{
-    func fetchArticleNewsData(completion:@escaping ([Article]?,NewsStoreError?) -> Void)
+    func fetchArticleNewsData(country:String,completion: @escaping ([Article]?, NewsStoreError?) -> Void)
 }
 
 protocol NewsStoreUtilityProtocol {

@@ -33,11 +33,11 @@ class NewsInteractor: NewsBusinessLogic, NewsDataStore
   
   func loadArticleNews(request: News.GetNews.Request)
   {
-      newsWorker.fetchArticleNewsData(completionHandler: { list in
+      newsWorker.fetchNewsData(country: request.country) { list in
           self.articles = list.articles
           let response = News.GetNews.Response(articles: list.articles)
           self.presenter?.presentArticleNews(response: response)
-      })
+      }
     
     
   }

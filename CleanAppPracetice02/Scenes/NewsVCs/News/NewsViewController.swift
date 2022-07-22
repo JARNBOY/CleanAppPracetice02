@@ -94,7 +94,7 @@ class NewsViewController: UIViewController, NewsDisplayLogic
     
     func fetchNews()
     {
-        let request = News.GetNews.Request()
+        let request = News.GetNews.Request(country: "th")
         interactor?.loadArticleNews(request: request)
     }
     

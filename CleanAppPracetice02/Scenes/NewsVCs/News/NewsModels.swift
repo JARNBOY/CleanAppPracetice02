@@ -20,6 +20,7 @@ enum News
   {
     struct Request
     {
+        let country:String
     }
     struct Response
     {

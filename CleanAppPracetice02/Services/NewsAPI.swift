@@ -14,11 +14,12 @@ class NewsAPI: NewsStoreProtocol, NewsStoreUtilityProtocol{
     
     let disposeBag = DisposeBag()
     
-    func fetchArticleNewsData(completion: @escaping ([Article]?, NewsStoreError?) -> Void) {
-        URLRequest.load(resource: ArticleList.all)
+    func fetchArticleNewsData(country:String,completion: @escaping ([Article]?, NewsStoreError?) -> Void) {
+        URLRequest.load(resource: ArticleList.getNewsURLResource(country: country))
             .subscribe(onNext:{ result in
                 if let result = result{
                     if !result.articles.isEmpty{
+                        print("result.articles : \(result.articles)")
                         completion(result.articles, nil)
                     }else{
                         completion(result.articles, NewsStoreError.CannotFetch("array is empty"))
