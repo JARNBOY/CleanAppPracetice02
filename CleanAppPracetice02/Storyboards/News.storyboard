@@ -66,8 +66,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QO6-fq-JXz">
                                 <rect key="frame" x="16" y="44" width="382" height="65"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOB-9S-hoS">
-                                        <rect key="frame" x="0.0" y="31.5" width="73.5" height="33.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOB-9S-hoS">
+                                        <rect key="frame" x="0.0" y="31.5" width="158" height="33.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -100,6 +100,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="67.633928571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5T7-7K-vf8">
+            <objects>
+                <viewController id="fXY-QT-EnY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N7j-fc-wkn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQH-V4-Ydh">
+                                <rect key="frame" x="0.0" y="109" width="414" height="753"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdR-bX-isR">
+                                <rect key="frame" x="16" y="44" width="382" height="65"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUr-Pc-VlB">
+                                        <rect key="frame" x="0.0" y="17" width="90" height="48"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Back">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="28"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="PUr-Pc-VlB" firstAttribute="leading" secondItem="jdR-bX-isR" secondAttribute="leading" id="KhY-Ct-u6p"/>
+                                    <constraint firstAttribute="bottom" secondItem="PUr-Pc-VlB" secondAttribute="bottom" id="UE2-Xc-EeA"/>
+                                    <constraint firstAttribute="height" constant="65" id="UIa-Mw-CJ2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cDn-ot-EGY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cDn-ot-EGY" firstAttribute="trailing" secondItem="jdR-bX-isR" secondAttribute="trailing" constant="16" id="2C5-vZ-Rxm"/>
+                            <constraint firstItem="ZQH-V4-Ydh" firstAttribute="top" secondItem="jdR-bX-isR" secondAttribute="bottom" id="7hc-pN-UUM"/>
+                            <constraint firstItem="ZQH-V4-Ydh" firstAttribute="leading" secondItem="cDn-ot-EGY" secondAttribute="leading" id="UZa-Ag-9sT"/>
+                            <constraint firstItem="jdR-bX-isR" firstAttribute="top" secondItem="cDn-ot-EGY" secondAttribute="top" id="awc-Xp-7wu"/>
+                            <constraint firstItem="cDn-ot-EGY" firstAttribute="bottom" secondItem="ZQH-V4-Ydh" secondAttribute="bottom" id="nHM-L7-BQ5"/>
+                            <constraint firstItem="jdR-bX-isR" firstAttribute="leading" secondItem="N7j-fc-wkn" secondAttribute="leading" constant="16" id="p5E-Uo-ZbB"/>
+                            <constraint firstItem="ZQH-V4-Ydh" firstAttribute="trailing" secondItem="cDn-ot-EGY" secondAttribute="trailing" id="zX4-fd-rhL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hFa-j8-QYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="753.62318840579712" y="67.633928571428569"/>
         </scene>
     </scenes>
     <resources>

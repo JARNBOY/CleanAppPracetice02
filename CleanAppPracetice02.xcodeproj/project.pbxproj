@@ -246,6 +246,71 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
+		FB7A58C1288A9F9100E860D1 /* NewsVC */ = {
+			isa = PBXGroup;
+			children = (
+				FBD5E5E42887F08700009C7F /* NewsPresenter.swift */,
+				FBD5E5E52887F08700009C7F /* NewsWorker.swift */,
+				FBD5E5E62887F08700009C7F /* NewsRouter.swift */,
+				FBD5E5E72887F08700009C7F /* NewsModels.swift */,
+				FBD5E5E82887F08700009C7F /* NewsViewController.swift */,
+				FBD5E5E92887F08700009C7F /* NewsInteractor.swift */,
+			);
+			path = NewsVC;
+			sourceTree = "<group>";
+		};
+		FB7A58C2288A9FB200E860D1 /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				FBD5E5D42887F00D00009C7F /* HomePresenter.swift */,
+				FBD5E5D52887F00D00009C7F /* HomeWorker.swift */,
+				FBD5E5D62887F00D00009C7F /* HomeRouter.swift */,
+				FBD5E5D72887F00D00009C7F /* HomeModels.swift */,
+				FBD5E5D82887F00D00009C7F /* HomeViewController.swift */,
+				FBD5E5D92887F00D00009C7F /* HomeInteractor.swift */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		FB7A58C3288A9FC400E860D1 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				FBD5E5AC2887ED8300009C7F /* LoginPresenter.swift */,
+				FBD5E5AD2887ED8300009C7F /* LoginWorker.swift */,
+				FBD5E5AE2887ED8300009C7F /* LoginRouter.swift */,
+				FBD5E5AF2887ED8300009C7F /* LoginModels.swift */,
+				FBD5E5B02887ED8300009C7F /* LoginViewController.swift */,
+				FBD5E5B12887ED8300009C7F /* LoginInteractor.swift */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		FB7A58C4288A9FDC00E860D1 /* ActivityVC */ = {
+			isa = PBXGroup;
+			children = (
+				FBD5E5F12887F0A000009C7F /* ActivityPresenter.swift */,
+				FBD5E5F22887F0A000009C7F /* ActivityWorker.swift */,
+				FBD5E5F32887F0A000009C7F /* ActivityRouter.swift */,
+				FBD5E5F42887F0A000009C7F /* ActivityModels.swift */,
+				FBD5E5F52887F0A000009C7F /* ActivityViewController.swift */,
+				FBD5E5F62887F0A000009C7F /* ActivityInteractor.swift */,
+			);
+			path = ActivityVC;
+			sourceTree = "<group>";
+		};
+		FB7A58C5288A9FFD00E860D1 /* SettingVC */ = {
+			isa = PBXGroup;
+			children = (
+				FBD5E5FE2887F0BB00009C7F /* SettingPresenter.swift */,
+				FBD5E5FF2887F0BB00009C7F /* SettingWorker.swift */,
+				FBD5E6002887F0BB00009C7F /* SettingRouter.swift */,
+				FBD5E6012887F0BB00009C7F /* SettingModels.swift */,
+				FBD5E6022887F0BB00009C7F /* SettingViewController.swift */,
+				FBD5E6032887F0BB00009C7F /* SettingInteractor.swift */,
+			);
+			path = SettingVC;
+			sourceTree = "<group>";
+		};
 		FBD5E56B2887E15900009C7F = {
 			isa = PBXGroup;
 			children = (
@@ -345,12 +410,7 @@
 		FBD5E5AB2887ED6D00009C7F /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				FBD5E5AC2887ED8300009C7F /* LoginPresenter.swift */,
-				FBD5E5AD2887ED8300009C7F /* LoginWorker.swift */,
-				FBD5E5AE2887ED8300009C7F /* LoginRouter.swift */,
-				FBD5E5AF2887ED8300009C7F /* LoginModels.swift */,
-				FBD5E5B02887ED8300009C7F /* LoginViewController.swift */,
-				FBD5E5B12887ED8300009C7F /* LoginInteractor.swift */,
+				FB7A58C3288A9FC400E860D1 /* LoginVC */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -408,12 +468,7 @@
 		FBD5E5D32887EFCF00009C7F /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				FBD5E5D42887F00D00009C7F /* HomePresenter.swift */,
-				FBD5E5D52887F00D00009C7F /* HomeWorker.swift */,
-				FBD5E5D62887F00D00009C7F /* HomeRouter.swift */,
-				FBD5E5D72887F00D00009C7F /* HomeModels.swift */,
-				FBD5E5D82887F00D00009C7F /* HomeViewController.swift */,
-				FBD5E5D92887F00D00009C7F /* HomeInteractor.swift */,
+				FB7A58C2288A9FB200E860D1 /* HomeVC */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -446,12 +501,7 @@
 		FBD5E5E32887F07400009C7F /* News */ = {
 			isa = PBXGroup;
 			children = (
-				FBD5E5E42887F08700009C7F /* NewsPresenter.swift */,
-				FBD5E5E52887F08700009C7F /* NewsWorker.swift */,
-				FBD5E5E62887F08700009C7F /* NewsRouter.swift */,
-				FBD5E5E72887F08700009C7F /* NewsModels.swift */,
-				FBD5E5E82887F08700009C7F /* NewsViewController.swift */,
-				FBD5E5E92887F08700009C7F /* NewsInteractor.swift */,
+				FB7A58C1288A9F9100E860D1 /* NewsVC */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -459,12 +509,7 @@
 		FBD5E5F02887F08C00009C7F /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				FBD5E5F12887F0A000009C7F /* ActivityPresenter.swift */,
-				FBD5E5F22887F0A000009C7F /* ActivityWorker.swift */,
-				FBD5E5F32887F0A000009C7F /* ActivityRouter.swift */,
-				FBD5E5F42887F0A000009C7F /* ActivityModels.swift */,
-				FBD5E5F52887F0A000009C7F /* ActivityViewController.swift */,
-				FBD5E5F62887F0A000009C7F /* ActivityInteractor.swift */,
+				FB7A58C4288A9FDC00E860D1 /* ActivityVC */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -472,12 +517,7 @@
 		FBD5E5FD2887F0AC00009C7F /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				FBD5E5FE2887F0BB00009C7F /* SettingPresenter.swift */,
-				FBD5E5FF2887F0BB00009C7F /* SettingWorker.swift */,
-				FBD5E6002887F0BB00009C7F /* SettingRouter.swift */,
-				FBD5E6012887F0BB00009C7F /* SettingModels.swift */,
-				FBD5E6022887F0BB00009C7F /* SettingViewController.swift */,
-				FBD5E6032887F0BB00009C7F /* SettingInteractor.swift */,
+				FB7A58C5288A9FFD00E860D1 /* SettingVC */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
