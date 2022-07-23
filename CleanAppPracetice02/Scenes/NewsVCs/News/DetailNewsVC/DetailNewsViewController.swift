@@ -62,10 +62,7 @@ class DetailNewsViewController: UIViewController, DetailNewsDisplayLogic
     // MARK: Routing
     
     func prepareRoutingFromNews(source: NewsDataStore){
-        let interactor = DetailNewsInteractor()
-        interactor.article = source.article
-        
-        openDetailNews()
+        openDetailNews(source.article)
     }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -95,9 +92,9 @@ class DetailNewsViewController: UIViewController, DetailNewsDisplayLogic
     
     @IBOutlet weak var webView: WKWebView!
     
-    func openDetailNews()
+    func openDetailNews(_ article:Article)
     {
-        let request = DetailNews.ShowWebDetail.Request()
+        let request = DetailNews.ShowWebDetail.Request(article: article)
         interactor?.showDetailWebView(request: request)
     }
     

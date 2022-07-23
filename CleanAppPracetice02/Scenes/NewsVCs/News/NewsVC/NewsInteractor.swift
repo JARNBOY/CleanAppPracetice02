@@ -44,6 +44,7 @@ class NewsInteractor: NewsBusinessLogic, NewsDataStore
     
     // MARK: select News Detail
     func selectNewsDetail(request: News.SelectNews.Request) {
+        self.article = request.article
         let response = News.SelectNews.Response(article:request.article)
         self.presenter?.presentNewsDetail(response: response)
     }

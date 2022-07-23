@@ -14,28 +14,29 @@ import UIKit
 
 protocol DetailNewsBusinessLogic
 {
-  func showDetailWebView(request: DetailNews.ShowWebDetail.Request)
+    func showDetailWebView(request: DetailNews.ShowWebDetail.Request)
 }
 
 protocol DetailNewsDataStore
 {
-  var article: Article { get set }
+    var article: Article { get set }
 }
 
 class DetailNewsInteractor: DetailNewsBusinessLogic, DetailNewsDataStore
 {
-  var presenter: DetailNewsPresentationLogic?
-  var worker: DetailNewsWorker?
-  var article: Article = Article(author: "", title: "", description: "", url: "", urlToImage: "")
-  
-  // MARK: Do something
-  
-  func showDetailWebView(request: DetailNews.ShowWebDetail.Request)
-  {
-    worker = DetailNewsWorker()
-    worker?.doSomeWork()
+    var presenter: DetailNewsPresentationLogic?
+    var worker: DetailNewsWorker?
+    var article: Article = Article(author: "", title: "", description: "", url: "", urlToImage: "")
     
-      let response = DetailNews.ShowWebDetail.Response(article: article)
-    presenter?.presentDetailWebView(response: response)
-  }
+    // MARK: Do something
+    
+    func showDetailWebView(request: DetailNews.ShowWebDetail.Request)
+    {
+        worker = DetailNewsWorker()
+        worker?.doSomeWork()
+        
+        self.article = request.article
+        let response = DetailNews.ShowWebDetail.Response(article: article)
+        presenter?.presentDetailWebView(response: response)
+    }
 }

@@ -20,6 +20,7 @@ enum DetailNews
   {
     struct Request
     {
+        var article: Article
     }
     struct Response
     {
