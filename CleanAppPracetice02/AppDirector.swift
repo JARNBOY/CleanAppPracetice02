@@ -69,6 +69,18 @@ class AppDirector: NSObject {
         
     }
     
+    
+    static func showDetailNewsViewController(source: NewsDataStore){
+        
+        let detailNewsViewController = DetailNewsViewController.instantiateFromStoryboard()
+        _ = detailNewsViewController.view
+        detailNewsViewController.prepareRoutingFromNews(source: source)
+        
+        
+        self.rootViewController.navigationController?.pushViewController(detailNewsViewController, animated: true)
+        
+    }
+    
     //MARK: Dialog - presentViewController
     
 //    static func showDialogSelectYearViewController(delegate:DialogSelectYearViewControllerDelegate){

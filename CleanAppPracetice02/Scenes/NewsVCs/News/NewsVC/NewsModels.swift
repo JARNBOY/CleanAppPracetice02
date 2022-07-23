@@ -14,21 +14,37 @@ import UIKit
 
 enum News
 {
-  // MARK: Use cases
-  
-  enum GetNews
-  {
-    struct Request
+    // MARK: Use cases
+    
+    enum GetNews
     {
-        let country:String
+        struct Request
+        {
+            let country:String
+        }
+        struct Response
+        {
+            var articles: [Article]
+        }
+        struct ViewModel
+        {
+            var displayedNewsList: [Article]
+        }
     }
-    struct Response
+    
+    enum SelectNews
     {
-        var articles: [Article]
+        struct Request
+        {
+            var article: Article
+        }
+        struct Response
+        {
+            var article: Article
+        }
+        struct ViewModel
+        {
+            var article: Article
+        }
     }
-    struct ViewModel
-    {
-        var displayedNewsList: [Article]
-    }
-  }
 }

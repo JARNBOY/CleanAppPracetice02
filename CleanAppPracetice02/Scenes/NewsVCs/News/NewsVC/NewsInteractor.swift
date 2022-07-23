@@ -14,31 +14,40 @@ import UIKit
 
 protocol NewsBusinessLogic
 {
-  func loadArticleNews(request: News.GetNews.Request)
-    
+    func loadArticleNews(request: News.GetNews.Request)
+    func selectNewsDetail(request: News.SelectNews.Request)
 }
 
 protocol NewsDataStore
 {
+    var article:Article { get set }
     var articles:[Article] { get set }
 }
 
 class NewsInteractor: NewsBusinessLogic, NewsDataStore
 {
-  var presenter: NewsPresentationLogic?
-  var newsWorker: NewsWorker = NewsWorker(newsStore: NewsAPI())
-  var articles: [Article] = []
-  
-  // MARK: Do something
-  
-  func loadArticleNews(request: News.GetNews.Request)
-  {
-      newsWorker.fetchNewsData(country: request.country) { list in
-          self.articles = list.articles
-          let response = News.GetNews.Response(articles: list.articles)
-          self.presenter?.presentArticleNews(response: response)
-      }
+    
+    var presenter: NewsPresentationLogic?
+    var newsWorker: NewsWorker = NewsWorker(newsStore: NewsAPI())
+    var articles: [Article] = []
+    var article: Article = Article(author: "", title: "", description: "", url: "", urlToImage: "")
+    // MARK: loadArticleNews Data
+    
+    func loadArticleNews(request: News.GetNews.Request)
+    {
+        newsWorker.fetchNewsData(country: request.country) { list in
+            self.articles = list.articles
+            let response = News.GetNews.Response(articles: list.articles)
+            self.presenter?.presentArticleNews(response: response)
+        }
+    }
+    
+    // MARK: select News Detail
+    func selectNewsDetail(request: News.SelectNews.Request) {
+        let response = News.SelectNews.Response(article:request.article)
+        self.presenter?.presentNewsDetail(response: response)
+    }
     
     
-  }
+    
 }

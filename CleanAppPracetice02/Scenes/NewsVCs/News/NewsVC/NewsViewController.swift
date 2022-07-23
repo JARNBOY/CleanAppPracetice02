@@ -15,6 +15,7 @@ import UIKit
 protocol NewsDisplayLogic: AnyObject
 {
     func displayArtileNews(viewModel: News.GetNews.ViewModel)
+    func displayNewsDetail(viewModel: News.SelectNews.ViewModel)
 }
 
 class NewsViewController: UIViewController, NewsDisplayLogic
@@ -106,6 +107,11 @@ class NewsViewController: UIViewController, NewsDisplayLogic
         }
         
     }
+    
+    // MARK: Show NewsDetail
+    func displayNewsDetail(viewModel: News.SelectNews.ViewModel){
+        router?.routeToDetailNews()
+    }
 }
 
 
@@ -126,5 +132,10 @@ extension NewsViewController:UITableViewDelegate,UITableViewDataSource{
         cell.descriptionLabel.text = displayedNewsList[indexPath.row].description
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let request = News.SelectNews.Request(article: displayedNewsList[indexPath.row])
+        interactor?.selectNewsDetail(request: request)
     }
 }
